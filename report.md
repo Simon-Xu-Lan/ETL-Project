@@ -46,13 +46,18 @@ This is project is to collect scooters data from 6 different companies in DC.
         - Algorithm: https://wrf.ecse.rpi.edu/Research/Short_Notes/pnpoly.html
         - scripts: geo_polygons.py
 
+  <img src="images/collection_scooters.png" width="1000">
+
 - Get weather data
+
   - scripts: weather.py
   - Retrieve the following useful fields from API data
     - airtemp, humidity, visibiltiy, windspeed, datadatetime, lon, lat
   - Add the following fields
     - "saved_at": The time to save the data to mongoDB
     - "tract_id": represent a small triangle area in DC
+
+  <img src="images/collection_weather.png" width="1000">
 
 # Transform
 
@@ -69,6 +74,21 @@ This is project is to collect scooters data from 6 different companies in DC.
     cleaned_df = df3.reset_index()
     ```
 
+## Only clean new data from MongoDB
+
+- Get the most recent "last_saved"
+- Only retrieve data from MongoDB that are greater than "last_saved"
+- Advantages:
+  - Reduce the load of cleaning and calculation
+  - Reduce redundancy
+
+## Clean MongoDB for weather data
+
+- Delect the old data from MongoDB once these data is saved to postgreSQL.
+- Advantages:
+  - Easily to retrieve new data from mongoDB every time
+  - Keep mongoDB in small size
+
 # Load the cleaned data to PostgreSQL
 
 - Create database and tables: schema.sql
@@ -79,10 +99,17 @@ This is project is to collect scooters data from 6 different companies in DC.
 - Table "weather_records"
   <img src="images/table_weather_records.png" width="1000">
 
-At the end of the week, your team will submit a Final Report that describes the following:
+- Table "process_log"
 
-Extract: your original data sources and how the data was formatted (CSV, JSON, pgAdmin 4, etc).
+  - log the time when save to postgreSQL database
+  - log the quantity saved
 
-Transform: what data cleaning or transformation was required.
+  <img src="images/table_process_log.png" width="1000">
 
-Load: the final database, tables/collections, and why this was chosen.
+# Future development
+
+- Deploy the app to online server, let it run 24/7
+- Join scooter_records and weather_records on
+  - tractid: two tractid with smallest distance join together
+  - last_updated: two closest last_updated join together
+- Built a RESTful API, other app can get data easily.
