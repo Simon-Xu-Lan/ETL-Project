@@ -6,6 +6,14 @@ This is project is to collect scooters data from 6 different companies in DC.
 - Second, process the data and then save them to MongoDB.
 - Third, every 60 minutes, retrieve data from mongoDB, clean them, and save them to postgreSQL
 
+# Process
+
+- Scooters data process flow chart
+  <img src="images/scooter_data_flow.png" width="1000">
+
+- Weather data process flow chart
+  <img src="images/weather_data_flow.png" width="1000">
+
 # Extract
 
 ## Data sources
@@ -106,6 +114,16 @@ This is project is to collect scooters data from 6 different companies in DC.
   - log the quantity saved
 
   <img src="images/table_process_log.png" width="1000">
+
+# Data processing advantages
+
+- Reduce the amount of data by cleaning and processing data
+  - Retrieve **5500** records every minutes
+  - The data reach **8 million** records after 24 hours
+  - Such big amount of raw data would be huge burden for database and data analysis
+  - The amount is reduced by **20%** after dropna and drop_duplicates
+  - The amount is reduced by **6 times** after the following process
+    - For each scooter with the same tractid, keep the minimum "last_updated" and drop others
 
 # Future development
 
