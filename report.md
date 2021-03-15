@@ -40,9 +40,10 @@ This is project is to collect scooters data from 6 different companies in DC.
   - Add the following fields
     - "saved_at": The time to save the data to mongoDB
     - "tract_id":
-      - represent a small triangle area in DC
-      - DC area consists of many such small triangles
-      - Calculate which triangle the scooter is located by latitude and longitude
+      - represent a small polygon area in DC
+      - DC area consists of 206 such small polygons
+        <img src="images/polygons.png" width="1000">
+      - Calculate the polygon which the scooter is located by latitude and longitude at the specific time
         - Algorithm: https://wrf.ecse.rpi.edu/Research/Short_Notes/pnpoly.html
         - scripts: geo_polygons.py
 
@@ -54,8 +55,8 @@ This is project is to collect scooters data from 6 different companies in DC.
   - Retrieve the following useful fields from API data
     - airtemp, humidity, visibiltiy, windspeed, datadatetime, lon, lat
   - Add the following fields
-    - "saved_at": The time to save the data to mongoDB
-    - "tract_id": represent a small triangle area in DC
+    - "saved_at": The time the weather data is saved to mongoDB
+    - "tract_id": The polygon that weather statation is located in.
 
   <img src="images/collection_weather.png" width="1000">
 
