@@ -1,5 +1,11 @@
 # ETL-Project
 
+# Project report
+
+- report.md
+
+# Project overview
+
 This is project is to collect scooters data from 6 different companies in DC and DC weather data.
 
 - First, get data from 6 different APIs every 60 seconds.
