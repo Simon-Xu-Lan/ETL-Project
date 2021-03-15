@@ -53,7 +53,7 @@ This is project is to collect scooters data from 6 different companies in DC.
         <img src="images/polygons.png" width="1000">
       - Calculate the polygon which the scooter is located by latitude and longitude at the specific time
         - Algorithm: https://wrf.ecse.rpi.edu/Research/Short_Notes/pnpoly.html
-        - scripts: geo_polygons.py
+        - scripts: <a href="geo_polygons.py">geo_polygons.py</a>
 
   <img src="images/collection_scooters.png" width="1000">
 

@@ -2,7 +2,7 @@
 
 # Project report
 
-- report.md
+- <a href="report.md">Please click here to review the project report</a>
 
 # Project overview
 
