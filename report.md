@@ -39,7 +39,7 @@ This is project is to collect scooters data from 6 different companies in DC.
 
 - Get scooters data from 6 APIs every 60 seconds
 
-  - scripts: scooters.py
+  - scripts: <a href="scooters.py">scooters.py</a>
   - Retrieve the following useful fields from API data
     - "company": company name
     - "last_updated": When the source data was updated
@@ -59,7 +59,7 @@ This is project is to collect scooters data from 6 different companies in DC.
 
 - Get weather data
 
-  - scripts: weather.py
+  - scripts: <a href="weather.py">weather.py</a>
   - Retrieve the following useful fields from API data
     - airtemp, humidity, visibiltiy, windspeed, datadatetime, lon, lat
   - Add the following fields
@@ -72,7 +72,7 @@ This is project is to collect scooters data from 6 different companies in DC.
 
 ## data cleaning
 
-- scripts: mongo_to_sql.py
+- scripts: <a href="mongo_to_sql.py">mongo_to_sql.py</a>
 - Retieve data from MongoDB every 60 minutes
 - Use pandas to clean data
   - dropna and drop_duplicates
